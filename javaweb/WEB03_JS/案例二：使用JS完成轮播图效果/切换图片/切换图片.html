@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>切换图片</title>
+		<script type="text/javascript">
+			function init(){
+			//		这里的change不能写成change()
+				setInterval(change,500);
+			}
+			var i=1;
+			function change(){
+				if (i<=2) {
+					i++;
+				}else{
+					i=1;
+				}
+				document.getElementById("img").src="../../img/"+i+".jpg";
+			}
+		</script>
+		<style>
+			div{
+				border: 1px solid red;
+				width: 500px;
+				height: 350px;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body onload="init();">
+		<div>
+			<img src="../../img/1.jpg" width="100%" id="img"/>
+			<!--<input type="button" value="切换图片"  onclick="change();"/>-->
+		</div>
+		
+	</body>
+</html>

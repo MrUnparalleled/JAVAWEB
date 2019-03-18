@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>History对象</title>
+	</head>
+	<script>
+		function rollback(){
+			//history.go(-1);
+			history.back();
+		}
+	</script>
+	<body>
+		<input type="button" value="返回上一页" onclick="rollback();" />
+	</body>
+</html>

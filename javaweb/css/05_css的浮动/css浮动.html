@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css的浮动</title>
+		<style>
+		/*id选择器的时候不能用纯数字*/
+			#div1{
+				width: 300px;
+				height: 200px;
+				border: 1px solid red;
+				float: left;
+			}
+			#div2{
+				width: 300px;
+				height: 200px;
+				border: 1px solid black;
+			}
+			#div3{
+				width: 300px;
+				height: 200px;
+				border: 1px solid blue;
+			}
+			/*清除浮动*/
+			#clear{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="div1"></div>
+		<a id="message">
+			逗逼是给朋友看的，成熟是给陌生人看的，幼稚是给喜欢的人看的！ 11
+		</a>
+		<div id="clear">
+		</div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+		
+	</body>
+</html>

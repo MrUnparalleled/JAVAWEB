@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取元素</title>
+		<script type="text/javascript">
+			function check(){
+				var name = document.getElementById("username").value;
+				if (name =="") {
+					alert("用户名不能为空");					
+					return false;
+				}
+//				浏览器没效果的时候，分号一定要好好检查！！
+				var pwd =document.getElementById("password").value;
+				if (pwd == "") {
+					alert("密码不能为空");
+					return false;
+				}
+				var eid =document.getElementById("email").value;
+//				正则表达式，用来校验！正则表达式不需要自己写，查出来直接用就好了，资料里面有一份正则表达式的world
+				if (!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(eid)) {
+					alert("邮箱格式不正确");
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</head>
+	<body>
+	<form action="表单校验.html" method="get" onsubmit="return check();">
+		用户名：<input type="text" name="username" id="username"/><br />
+		密码： <input type="password" name="password" id="password"/><br />
+		邮箱：<input type="text" name="email" id="email" /><br />
+		<input type="submit" value="注册" />
+	</form>
+		
+	</body>
+</html>
