@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>课后作业</title>
+		<script>
+		//list1 为转移的目的地，list2为转移的起始地
+		//转移一个的操作
+			function toleft1(){
+				var list1 = document.getElementById("list1");
+				var list2 =document.getElementById("list2");
+				for (var i=0;i<list2.options.length;i++) {
+					if (list2.options[i].selected==true) {
+						list1.appendChild(list2.options[i]);
+						break;
+					}
+				}
+			}
+			function toright1(){
+				var list1 = document.getElementById("list2");
+				var list2 =document.getElementById("list1");
+				for (var i=0;i<list2.options.length;i++) {
+					if (list2.options[i].selected==true) {
+						list1.appendChild(list2.options[i]);
+						break;
+					}
+				}
+			}
+			//转移多个的操作
+			//!!!注意如果不加上i--的话，连在一起的多个option不能一次性移过来,option移动的同时，select的长度也在变化，下标加一，长度减一的话会漏掉一个。
+			function toleft2(){
+				var list1 = document.getElementById("list1");
+				var list2 =document.getElementById("list2");
+				for (var i=0;i<list2.options.length;i++) {
+					if (list2.options[i].selected==true) {
+						list1.appendChild(list2.options[i]);
+						i--;
+					}
+				}
+			}
+			function toright2(){
+				var list1 = document.getElementById("list2");
+				var list2 =document.getElementById("list1");
+				for (var i=0;i<list2.options.length;i++) {
+					if (list2.options[i].selected==true) {
+						list1.appendChild(list2.options[i]);
+						i--;
+					}
+				}
+			}
+			//转移所有的操作
+			function toleftall(){
+				var list1 = document.getElementById("list1");
+				var list2 =document.getElementById("list2");
+				for (var i=0;i<list2.options.length;i++) {
+					list1.appendChild(list2.options[i]);
+					i--;
+				}
+			}
+			function torightall(){
+				var list1 = document.getElementById("list2");
+				var list2 =document.getElementById("list1");
+				for (var i=0;i<list2.options.length;i++) {
+					list1.appendChild(list2.options[i]);
+					i--;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table >
+			<tr>
+				<td>
+					<select id="list1" style="width: 100px; height: 200px;" size="4" multiple="multiple">
+						<option>小吴</option>
+						<option>Java</option>
+						<option>python</option>
+						<option> C#</option>
+						<option>小钟</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value="<" style="width: 50px;" onclick="toleft1()"/><br />
+					<input type="button" value="<<" style="width: 50px;" onclick="toleft2()"/><br />
+					<input type="button" value="<<<" style="width: 50px;" onclick="toleftall()"/><br />
+					<input type="button" value=">" style="width: 50px;" onclick="toright1()"/><br />
+					<input type="button" value=">>" style="width: 50px;" onclick="toright2()"/><br />
+					<input type="button" value=">>>" style="width: 50px;" onclick="torightall()"/><br />
+				</td>
+				<td>
+					<select id="list2" style="width: 100px; height: 200px" size="4" multiple="multiple">
+						<option>老吴</option>
+						<option>javascript</option>
+						<option>C</option>
+						<option>C++</option>
+						<option>老钟</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
