@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格的隔行换色</title>
+		<script>
+			//鼠标移上去高亮显示
+			function changecolor(id){
+				document.getElementById("row"+id).style.backgroundColor="red";
+			}
+			//鼠标移开取消高亮显示
+			function finish(id){
+				document.getElementById("row"+id).style.backgroundColor="white";
+			}
+		</script>
+	</head>
+	<body>
+		<table id="table" border="1px" align="center" width="1000px" height="100px">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="row1" onmouseover="changecolor('1')" onmouseout="finish('1')">
+					<td>1</td>
+					<td>小吴</td>
+					<td>19</td>
+				</tr>
+				<tr  id="row2" onmouseover="changecolor('2')" onmouseout="finish('2')">
+					<td>2</td>
+					<td>小钟</td>
+					<td>20</td>
+				</tr>
+				<tr  id="row3" onmouseover="changecolor('3')" onmouseout="finish('3')">
+					<td>3</td>
+					<td>老王</td>
+					<td>49</td>
+				</tr>
+				<tr  id="row4" onmouseover="changecolor('4')" onmouseout="finish('4')">
+					<td>4</td>
+					<td>小张</td>
+					<td>29</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

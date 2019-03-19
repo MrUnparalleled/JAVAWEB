@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格的隔行换色</title>
+		<script>
+			function checkall(){
+				//获取全选框
+				var c1 = document.getElementById("checkbox1");
+				//获取每一行的复选框（数组）
+				var cs = document.getElementsByName("checklist");
+				//实现当全选时的操作
+				if (c1.checked==true) {
+					for (var i=0;i<cs.length;i++) {
+						cs[i].checked=true;
+					}
+				}
+				//实现全不选时的操作
+				//错误：赋值时的=变成了==    ！！！！！
+				if (c1.checked==false) {
+					for (var i=0;i<cs.length;i++) {
+						cs[i].checked=false;
+					}
+				}
+				//alert(c1.checked);
+				//alert(cs[0].checked);
+			}
+		</script>
+	</head>
+	<body>
+		<table id="table" border="1px" align="center" width="1000px" height="100px">
+			<thead>
+				<tr>
+					<th><input type="checkbox" onclick="checkall()" id="checkbox1"/></th>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" name="checklist"/></td>
+					<td>1</td>
+					<td>小吴</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="checklist"/></td>
+					<td>2</td>
+					<td>小钟</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="checklist"/></td>
+					<td>3</td>
+					<td>老王</td>
+					<td>49</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="checklist"/></td>
+					<td>4</td>
+					<td>小张</td>
+					<td>29</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

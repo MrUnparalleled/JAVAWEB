@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实现省市二级联动</title>
+		<script>
+			//创建一个二维数组用于存储省市
+			var cities=new Array(3);
+			cities[0]=new Array("长沙市","株洲市","湘潭市","衡阳市");
+			cities[1]=new Array("金华市","宁波市","杭州市","温州市");
+			cities[2]=new Array("广州市","深圳市","珠海市","东莞市");
+			function PvChange(val){
+				//获取第一个下拉列表
+				var pv = document.getElementById("PV");
+				//获取第二个下来列表
+				var pv2= document.getElementById("PV2");
+				//清空之前的第二个下拉列表的数据
+				pv2.options.length=0;
+				//将对应第一个下来列表的二级市加载到第二个下拉列表中
+				for (var i=0;i<cities.length;i++) {
+					if (i==val) 
+					{
+						for (var j=0;j<cities[i].length;j++) {
+							//创建文本节点
+							var city = document.createTextNode(cities[i][j]);
+							//创建option节点
+							var Ocity= document.createElement("option");
+							//将文本节点添加到option中
+							Ocity.appendChild(city);
+							//将option添加到select当中
+							pv2.appendChild(Ocity);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			籍贯：
+			<select id="PV" onchange="PvChange(this.value)">
+				<option>--请选择--</option>
+				<option value="0">湖南省</option>
+				<option value="1">浙江省</option>
+				<option value="2">广东省</option>
+			</select>
+			<select id="PV2">
+			</select>
+		</form>
+	</body>
+</html>

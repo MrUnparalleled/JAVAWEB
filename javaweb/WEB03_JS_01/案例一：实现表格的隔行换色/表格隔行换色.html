@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格的隔行换色</title>
+		<script>
+			function colorchange(){
+				//获取表格
+				var table = document.getElementById("table");
+				//获取tbody中行数
+				var num = table.tBodies[0].rows.length;
+				//alert(num);
+				//这里的for循环格式不要写错了！！！
+				for (var i=0;i<num;i++) {
+					if (i%2==1) {
+						table.tBodies[0].rows[i].style.backgroundColor="red";
+					}
+					if (i%2==0) {
+						table.tBodies[0].rows[i].style.backgroundColor="yellow";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="colorchange()">
+		<table id="table" border="1px" align="center" width="1000px" height="100px">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>小吴</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>小钟</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>老王</td>
+					<td>49</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>小张</td>
+					<td>29</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
