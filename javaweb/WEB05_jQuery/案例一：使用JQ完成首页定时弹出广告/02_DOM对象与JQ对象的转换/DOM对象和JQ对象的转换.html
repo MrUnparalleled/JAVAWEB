@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dom对象和JQ对象的转换</title>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.js" ></script>
+		<script>
+			function JSWrite(){
+				//JS的DOM方法
+				//JS一块地方出问题会影响其他的
+				document.getElementById("span1").innerHTML=" 帅帅哒";
+				//DOM对象无法操作JQ对象里面的属性和方法
+				//document.getElementById("span1").html("帅帅哒");
+				
+				var spanEle =document.getElementById("span1");
+				
+				//将DOM对象转换为JQ对象
+				$(spanEle).html("思密达");
+			}
+			$(function(){
+				$("#btn2").click(function(){
+					//JQ对象无法操作JS里面的属性和方法！
+					//$("#span2").innerHTML(" 美美哒！");
+					$("#span2").html(" 美美哒");
+					
+					//JQ对象向DOM对象转换方式一
+					$("#span1").get(0).innerHTML="最美啦";
+					//JQ对象向DOM对象转换方式二
+					$("#span1")[0].innerHTML="棒棒哒";
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="JS写入" onclick="JSWrite()"/>
+		<input type="button" id="btn2" value="JQ写入" /><br />
+		小吴<span id="span1"></span><br />
+		小钟<span id="span2"></span><br />
+	</body>
+</html>

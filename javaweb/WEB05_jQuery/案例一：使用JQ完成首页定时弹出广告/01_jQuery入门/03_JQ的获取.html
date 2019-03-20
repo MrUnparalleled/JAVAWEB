@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JQ的获取</title>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.js" ></script>
+		<script>
+			$(function(){
+				//JS方式获取
+//				document.getElementById("btn").onclick=function(){
+//					location.href="02_JQ页面加载与JS页面加载区别.html";
+//				}
+				//JQ方式的获取
+				$("#btn").click(function(){
+					location.href="02_JQ页面加载与JS页面加载区别.html";
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="点我有惊喜" id="btn" />
+	</body>
+</html>

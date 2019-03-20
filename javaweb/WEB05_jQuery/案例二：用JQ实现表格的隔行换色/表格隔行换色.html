@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格的隔行换色</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//获取偶数行并赋值它的背景颜色
+				//$("tbody tr:even").css("background-color","red");
+				//获取奇数行并赋值它的背景颜色
+				//$("tbody tr:odd").css("background-color","yellow");
+				//获取偶数行采用css样式(赋值类名)
+				$("tbody tr:even").addClass("even");
+				//获取奇数行采用css样式(赋值类名)
+				$("tbody tr:odd").addClass("odd");
+				
+			})
+		</script>
+	</head>
+	<body onload="colorchange()">
+		<table border="1px" align="center" width="1000px" height="100px">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>小吴</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>小钟</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>老王</td>
+					<td>49</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>小张</td>
+					<td>29</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

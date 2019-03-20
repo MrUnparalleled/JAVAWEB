@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JQ和JS页面加载的区别</title>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			window.onload=function(){
+				alert("小张")
+			}
+//			传统方式页面加载会存在覆盖问题，加载比JQ慢(整个页面加载完毕，比如图片)
+			window.onload=function(){
+				alert("老王");
+			}
+			//JQ的加载比JS要快！(当整个dom树结构绘制完毕就会加载)
+			jQuery(document).ready(function(){
+				alert("李四");
+			});
+			
+			//JQ不存在顺序问题，加载时候顺序进行
+			$(document).ready(function(){
+				alert("王五");
+			});
+			//简写方式
+			$(function(){
+				alert("汾酒");
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
