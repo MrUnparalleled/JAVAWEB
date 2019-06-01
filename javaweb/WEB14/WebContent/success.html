@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var seconds = 5 ;
+		var timer = setInterval(function(){
+			seconds--;
+			document.getElementById("second").innerHTML=seconds;
+			if (seconds==0) {
+				clearInterval(timer);
+				location.href="/WEB14/line";
+			}
+		}, 1000);
+	}
+</script>
+</head>
+<body>
+	登录成功，<span id="second" style="color: red">5</span>秒后页面将跳转。如果不跳转，请点击<a href="/WEB14/line">这里</a>
+</body>
+</html>

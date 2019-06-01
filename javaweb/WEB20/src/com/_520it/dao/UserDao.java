@@ -1,0 +1,19 @@
+package com._520it.dao;
+
+import java.sql.SQLException;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
+
+import com._520it.utils.DataSourceUtils;
+
+public class UserDao {
+
+	public int checkRegisterUsername(String username) throws SQLException {
+		QueryRunner runner =new QueryRunner(DataSourceUtils.getDataSource());
+		String sql="select count(*) from user where username=?";
+		Long query = (Long) runner.query(sql, new ScalarHandler(), username);
+		return query.intValue();
+	}
+
+}

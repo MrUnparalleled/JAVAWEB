@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>WEB12_HTTP</display-name>
+  <servlet>
+  <servlet-name>FirstServlet</servlet-name>
+  <servlet-class>com._520it.servlet.FirstServlet</servlet-class>
+  <!--servlet对象在服务器启动时就创建  里面的数字代表优先级，数字越小，优先级越高，开发中一般取中间值！！-->
+  <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FirstServlet</servlet-name>
+  	<!-- 完全匹配：访问的资源与配置的资源完全相同才能访问到 -->
+  	<url-pattern>/aaa</url-pattern>
+  	<!-- 目录匹配 格式：/虚拟目录../*  *代表任意 -->
+  	<!--<url-pattern>/aaa/*</url-pattern>-->
+  	<!-- 扩展名匹配 格式：*.扩展名 -->
+  	<!--<url-pattern>*.abc</url-pattern>-->
+  	<!-- 第二种和第三种不可以混用！！！！ -->
+  	<!-- 缺省的servlet -->
+  	<!--<url-pattern>/</url-pattern>-->
+  </servlet-mapping>
+  <!-- 欢迎页面  -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery_ajax</title>
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function fn1(){
+				$.get(
+					"/WEB22/ajaxServlet2",//url地址
+					{"name":"zhangsan","age":25},//请求参数
+					function(data){//执行成功后的回调函数
+						alert(data);
+					},
+					"text"
+				);
+			}
+			function fn2(){
+				$.post(
+					"/WEB22/ajaxServlet2",//url地址
+					{"name":"lisi","age":18},//请求参数
+					function(data){
+						//{\"name\":\"zhangsan\",\"age\":18}
+						alert(data.name);
+					},
+					"json"
+				);
+			}
+			function fn3(){
+				$.ajax({
+					type:"get",
+					url:"/WEB22/ajaxServlet2",
+					async:true,
+					data:{"name":"zhangsan","age":22},
+					success:function(data){
+						alert(data.name);
+					},
+					error:function(){
+						alert("请求失败");
+					},
+					dataType:"json"
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="fn1()" value="get访问服务器端"><span id="span1"></span><br />
+		<input type="button" onclick="fn2()" value="post访问服务器端"><span id="span2"></span><br />
+		<input type="button" onclick="fn3()" value="ajax访问服务器端"><span id="span2"></span><br />
+	</body>
+</html>
